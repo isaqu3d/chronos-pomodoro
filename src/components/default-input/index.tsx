@@ -1,10 +1,12 @@
-type DefaultInputProps = React.InputHTMLAttributes<HTMLInputElement>;
+type DefaultInputProps = {
+  id: string;
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-export function DefaultInput({ type }: DefaultInputProps) {
+export function DefaultInput({ id, type }: DefaultInputProps) {
   return (
     <>
-      <label htmlFor="input">text</label>
-      <input id="input" type={type} className="bg-red-700" />
+      <label htmlFor={id}>text</label>
+      <input id={id} type={type} className="bg-red-700" />
     </>
   );
 }
